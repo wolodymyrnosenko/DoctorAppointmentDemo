@@ -1,14 +1,26 @@
 [
   {
-    "DoctorType": 1,
-    "Experience": 20,
+    "DoctorType": 0,
+    "Experience": 0,
     "Salary": 0.0,
     "Name": "Vasya",
     "Surname": "Petrov",
     "Phone": null,
     "Email": null,
-    "Id": 12,
-    "CreatedAt": "2025-05-27T10:01:38.7291996+03:00",
+    "Id": 1,
+    "CreatedAt": "2025-05-27T17:44:55.9551376+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "DoctorType": 0,
+    "Experience": 0,
+    "Salary": 0.0,
+    "Name": "Vasya",
+    "Surname": "Petrov",
+    "Phone": null,
+    "Email": null,
+    "Id": 2,
+    "CreatedAt": "2025-05-27T17:45:02.7053036+03:00",
     "UpdatedAt": "0001-01-01T00:00:00"
   }
 ]
