@@ -38,7 +38,7 @@ namespace MyDoctorAppointment
                 DoctorType = Domain.Enums.DoctorTypes.Dentist
             };
 
-            _doctorService.Create(newDoctor);
+            //_doctorService.Create(newDoctor);
 
             Console.WriteLine("Current doctors list: ");
             docs = _doctorService.GetAll();
