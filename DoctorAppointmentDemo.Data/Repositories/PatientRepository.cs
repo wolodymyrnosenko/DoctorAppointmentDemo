@@ -26,7 +26,7 @@ namespace MyDoctorAppointment.Data.Repositories
             Console.WriteLine($"Surname: {patient.Surname}");
             Console.WriteLine($"Name: {patient.Name}");
             Console.WriteLine($"Phone: {patient.Phone}");
-            //...to be continued
+            //to be continued...
         }
 
         protected override void SaveLastId()
