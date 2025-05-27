@@ -69,6 +69,20 @@ namespace MyDoctorAppointment.Data.Repositories
 
         protected abstract void SaveLastId();
 
-        protected dynamic ReadFromAppSettings() => JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Constants.AppSettingsPath))!;
+        //protected dynamic ReadFromAppSettings() => JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Constants.AppSettingsPath))!;
+
+        protected dynamic ReadFromAppSettings()
+        {
+            //Rewrite json file using constants pathes
+            string json = File.ReadAllText(Constants.AppSettingsPath);
+            dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+            jsonObj["Database"]["Doctors"]["Path"] = Constants.DoctorsPath;
+            jsonObj["Database"]["Patients"]["Path"] = Constants.PatientsPath;
+            jsonObj["Database"]["Appointments"]["Path"] = Constants.AppointmentsPath;
+            string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(Constants.AppSettingsPath, output);
+
+            return JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Constants.AppSettingsPath))!;
+        }
     }
 }
