@@ -8,11 +8,13 @@ namespace MyDoctorAppointment
     {
         private readonly IDoctorService _doctorService;
         private readonly IPatientService _patientService;
+        private readonly IAppointmentService _appointmentService;
 
         public DoctorAppointment()
         {
             _doctorService = new DoctorService();
             _patientService = new PatientService();
+            _appointmentService = new AppointmentService();
         }
 
         public void Menu()
@@ -22,30 +24,47 @@ namespace MyDoctorAppointment
             //    // add Enum for menu items and describe menu
             //}
 
+            Console.WriteLine("Current appointments list: ");
+            foreach (var appointment in _appointmentService.GetAll())
+                Console.WriteLine($"ID: {appointment.Id} {appointment.Description}");
 
-            Console.WriteLine("Current patients list: ");
-            foreach(var patient in _patientService.GetAll())
-                Console.WriteLine($"ID: {patient.Id} {patient.Name}");
+            Console.WriteLine("Adding appointment: ");
 
-            Console.WriteLine("Adding patient: ");
-
-            var newPatient = new Patient
+            var newAppointment = new Appointment()
             {
-                Name = "Mykola",
-                Surname = "Hvoryi",
+                Description = "Patient visits doctor"
             };
 
-            _patientService.Create(newPatient);
+            _appointmentService.Create(newAppointment);
+
+            Console.WriteLine("Current appointments list: ");
+            foreach (var appointment in _appointmentService.GetAll())
+                Console.WriteLine($"ID: {appointment.Id} {appointment.Description}");
+
 
             Console.WriteLine("Current patients list: ");
             foreach (var patient in _patientService.GetAll())
                 Console.WriteLine($"ID: {patient.Id} {patient.Name}");
 
-            Console.WriteLine("Delete patient: ");
-            _patientService.Delete(newPatient.Id);
-            Console.WriteLine("Current patients list: ");
-            foreach (var patient in _patientService.GetAll())
-                Console.WriteLine($"ID: {patient.Id} {patient.Name}");
+            //Console.WriteLine("Adding patient: ");
+
+            //var newPatient = new Patient
+            //{
+            //    Name = "Mykola",
+            //    Surname = "Hvoryi",
+            //};
+
+            //_patientService.Create(newPatient);
+
+            //Console.WriteLine("Current patients list: ");
+            //foreach (var patient in _patientService.GetAll())
+            //    Console.WriteLine($"ID: {patient.Id} {patient.Name}");
+
+            //Console.WriteLine("Delete patient: ");
+            //_patientService.Delete(newPatient.Id);
+            //Console.WriteLine("Current patients list: ");
+            //foreach (var patient in _patientService.GetAll())
+            //    Console.WriteLine($"ID: {patient.Id} {patient.Name}");
 
             Console.WriteLine("Current doctors list: ");
             var docs = _doctorService.GetAll();
