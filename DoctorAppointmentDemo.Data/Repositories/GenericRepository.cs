@@ -65,7 +65,7 @@ namespace MyDoctorAppointment.Data.Repositories
             return source;
         }
 
-        public abstract void ShowInfo(TSource source);
+        //public abstract void ShowInfo(TSource source);
 
         protected abstract void SaveLastId();
 
@@ -84,5 +84,6 @@ namespace MyDoctorAppointment.Data.Repositories
 
             return JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Constants.AppSettingsPath))!;
         }
+        public int GetLastId() => LastId;
     }
 }

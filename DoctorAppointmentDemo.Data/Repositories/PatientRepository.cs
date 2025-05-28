@@ -18,16 +18,16 @@ namespace MyDoctorAppointment.Data.Repositories
             LastId = result.Database.Patients.LastId;
         }
 
-        public override void ShowInfo(Patient patient)
-        {
-            //Console.WriteLine(); // implement view of all object fields
-            Console.WriteLine("---Patient---");
-            Console.WriteLine($"Id: {patient.Id}");
-            Console.WriteLine($"Surname: {patient.Surname}");
-            Console.WriteLine($"Name: {patient.Name}");
-            Console.WriteLine($"Phone: {patient.Phone}");
-            //to be continued...
-        }
+        //public override void ShowInfo(Patient patient)
+        //{
+        //    //Console.WriteLine(); // implement view of all object fields
+        //    Console.WriteLine("---Patient---");
+        //    Console.WriteLine($"Id: {patient.Id}");
+        //    Console.WriteLine($"Surname: {patient.Surname}");
+        //    Console.WriteLine($"Name: {patient.Name}");
+        //    Console.WriteLine($"Phone: {patient.Phone}");
+        //    //to be continued...
+        //}
 
         protected override void SaveLastId()
         {

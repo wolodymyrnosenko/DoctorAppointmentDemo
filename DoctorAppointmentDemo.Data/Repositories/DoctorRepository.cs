@@ -18,10 +18,10 @@ namespace MyDoctorAppointment.Data.Repositories
             LastId = result.Database.Doctors.LastId;
         }
 
-        public override void ShowInfo(Doctor doctor)
-        {
-            Console.WriteLine(); // implement view of all object fields
-        }
+        //public override void ShowInfo(Doctor doctor)
+        //{
+        //    Console.WriteLine(); // implement view of all object fields
+        //}
 
         protected override void SaveLastId()
         {

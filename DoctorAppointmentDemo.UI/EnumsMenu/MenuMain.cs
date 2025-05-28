@@ -1,11 +1,24 @@
-﻿//namespace MyDoctorAppointment.Domain.Enums
-namespace DoctorAppointmentDemo.UI.EnumsMenu
+﻿namespace DoctorAppointmentDemo.UI.EnumsMenu
 {
-    public enum MenuMain
+    //public enum MenuMain
+    //{
+    //    Завершення_програми,
+    //    Призначення,
+    //    Лікарі,
+    //    Пацієнти
+    //}
+
+    public enum MenuMain//One-layer list
     {
         Завершення_програми,
-        //Призначення,
-        Лікарі,
-        //Пацієнти
+        Виведення_всіх_візитів,
+        //Призначення_візиту,
+        Видалення_візиту,
+        Виведення_всіх_лікарів,
+        Додати_лікаря,
+        Видалення_лікаря,
+        Виведення_всіх_пацієнтів,
+        Додати_пацієнта,
+        Видалення_пацієнта
     }
 }

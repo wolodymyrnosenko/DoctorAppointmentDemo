@@ -13,16 +13,18 @@ namespace MyDoctorAppointment
         private readonly IPatientService _patientService;
         private readonly IAppointmentService _appointmentService;
 
+        //MenuMain menuMain;
+        //MenuAppointment menuAppointment;
+        //MenuDoctor menuDoctor;
+        //MenuPatients menuPatient;
+
         public DoctorAppointment()
         {
             _doctorService = new DoctorService();
             _patientService = new PatientService();
             _appointmentService = new AppointmentService();
+            //InitTestEntities();
         }
-        MenuMain menuMain;
-        MenuAppointment menuAppointment;
-        MenuDoctor menuDoctor;
-        MenuPatients menuPatient;
 
         public void Menu()
         {
@@ -31,6 +33,7 @@ namespace MyDoctorAppointment
             //    // add Enum for menu items and describe menu
             //}
 
+            MenuMain menuMain;
             do
             {
                 Console.Clear();
@@ -53,13 +56,32 @@ namespace MyDoctorAppointment
                 {
                     case MenuMain.Завершення_програми:
                         return;
-                    //case MenuMain.Призначення:
-                    //    break;
-                    case MenuMain.Лікарі:
-                        ShowItemsMenuDoctors();
+                    case MenuMain.Виведення_всіх_візитів:
+                        _appointmentService.ShowAll();
                         break;
-                    //case MenuMain.Пацієнти:
+                    //case MenuMain.Призначення_візиту:
                     //    break;
+                    case MenuMain.Видалення_візиту:
+                        _appointmentService.DeleteConsole();
+                        break;
+                    case MenuMain.Виведення_всіх_лікарів:
+                        _doctorService.ShowAll();
+                        break;
+                    case MenuMain.Додати_лікаря:
+                        _doctorService.CreateConsole();
+                        break;
+                    case MenuMain.Видалення_лікаря:
+                        _doctorService.DeleteConsole();
+                        break;
+                    case MenuMain.Виведення_всіх_пацієнтів:
+                        _patientService.ShowAll();
+                        break;
+                    case MenuMain.Додати_пацієнта:
+                        _patientService.CreateConsole();
+                        break;
+                    case MenuMain.Видалення_пацієнта:
+                        _patientService.DeleteConsole();
+                        break;
                     default:
                         Console.Write($"{Environment.NewLine}Введіть одну із вказаних цифр");
                         break;
@@ -67,126 +89,60 @@ namespace MyDoctorAppointment
                 Console.Write($"{Environment.NewLine}press any key to continue");
                 Console.ReadKey();
             } while (true);
-
-            
-
-
-            //Console.WriteLine("Current appointments list: ");
-            //foreach (var appointment in _appointmentService.GetAll())
-            //    Console.WriteLine($"ID: {appointment.Id} {appointment.Description}");
-
-            //Console.WriteLine("Adding appointment: ");
-
-            //var newAppointment = new Appointment()
-            //{
-            //    Description = "Patient visits doctor"
-            //};
-
-            //_appointmentService.Create(newAppointment);
-
-            //Console.WriteLine("Current appointments list: ");
-            //foreach (var appointment in _appointmentService.GetAll())
-            //    Console.WriteLine($"ID: {appointment.Id} {appointment.Description}");
-
-
-            //Console.WriteLine("Current patients list: ");
-            //foreach (var patient in _patientService.GetAll())
-            //    Console.WriteLine($"ID: {patient.Id} {patient.Name}");
-
-            //Console.WriteLine("Adding patient: ");
-
-            //var newPatient = new Patient
-            //{
-            //    Name = "Mykola",
-            //    Surname = "Hvoryi",
-            //};
-
-            //_patientService.Create(newPatient);
-
-            //Console.WriteLine("Current patients list: ");
-            //foreach (var patient in _patientService.GetAll())
-            //    Console.WriteLine($"ID: {patient.Id} {patient.Name}");
-
-            //Console.WriteLine("Delete patient: ");
-            //_patientService.Delete(newPatient.Id);
-            //Console.WriteLine("Current patients list: ");
-            //foreach (var patient in _patientService.GetAll())
-            //    Console.WriteLine($"ID: {patient.Id} {patient.Name}");
-
-            //Console.WriteLine("Current doctors list: ");
-            //var docs = _doctorService.GetAll();
-
-            //foreach (var doc in docs)
-            //{
-            //    Console.WriteLine(doc.Name);
-            //}
-
-            //Console.WriteLine("Adding doctor: ");
-
-            //var newDoctor = new Doctor
-            //{
-            //    Name = "Vasya",
-            //    Surname = "Petrov",
-            //    Experience = 20,
-            //    DoctorType = Domain.Enums.DoctorTypes.Dentist
-            //};
-
-            ////_doctorService.Create(newDoctor);
-
-            //Console.WriteLine("Current doctors list: ");
-            //docs = _doctorService.GetAll();
-
-            //foreach (var doc in docs)
-            //{
-            //    Console.WriteLine(doc.Name);
-            //}
         }
-
-        public void ShowItemsMenuDoctors()
+        public void InitTestEntities()
         {
-            do
+            Doctor testDoc = new Doctor
             {
-                Console.Clear();
-                foreach (var menuItem in Enum.GetValues(typeof(MenuDoctor)))
-                {
-                    Console.WriteLine($"{(int)menuItem} - {menuItem.ToString().Replace('_', ' ')}");
-                }
-                Console.Write("Введіть номер за списком: ");
-                try
-                {
-                    menuDoctor = (MenuDoctor)Convert.ToInt32(Console.ReadKey().KeyChar.ToString());
-                }
-                catch
-                {
-                    Console.Write($"{Environment.NewLine}Введіть число");
-                    Console.ReadKey();
-                    continue;
-                }
-                switch (menuDoctor)
-                {
-                    case MenuDoctor.Головне_меню:
-                        return;
-                    case MenuDoctor.Додати_лікаря:
-                        Doctor newDoctor = new Doctor
-                        {
-                            Name = "Vasya",
-                            Surname = "Petrov"
-                        };
-                        _doctorService.Create(newDoctor);
-                        return;
-                    case MenuDoctor.Виведення_всіх_лікарів:
-                        Console.WriteLine();
-                        foreach (var doc in _doctorService.GetAll())
-                            Console.WriteLine($"ID: {doc.Id} Name: {doc.Name}");
-                        return;
-                        //the others items of enum
-                    default:
-                        Console.Write($"{Environment.NewLine}Введіть одну із вказаних цифр");
-                        break;
-                }
-                Console.Write($"{Environment.NewLine}press any key to continue");
-                Console.ReadKey();
-            } while (true);
+                Name = "nameDoc1",
+                Surname = "surnameDoc1",
+                DoctorType = Domain.Enums.DoctorTypes.Dentist,
+                Email = "doc1@gmail.com",
+                Experience = 10
+            };
+            _doctorService.Create(testDoc);
+            testDoc = new Doctor
+            {
+                Name = "nameDoc2",
+                Surname = "surnameDoc2",
+                DoctorType = Domain.Enums.DoctorTypes.FamilyDoctor,
+                Email = "doc2@gmail.com",
+                Experience = 20
+            };
+            _doctorService.Create(testDoc);
+
+            Patient testPatient = new Patient
+            {
+                Name = "namePatient1",
+                Surname = "surnamePatient1",
+                IllnessType = Domain.Enums.IllnessTypes.DentalDisease,
+                Email = "patient1@gmail.com",
+                AdditionalInfo = "has medical partner insurance"
+            };
+            _patientService.Create(testPatient);
+            testPatient = new Patient
+            {
+                Name = "namePatient2",
+                Surname = "surnamePatient2",
+                IllnessType = Domain.Enums.IllnessTypes.Ambulance,
+                Email = "patient2@gmail.com",
+                AdditionalInfo = "need additional medicine test"
+            };
+            _patientService.Create(testPatient);
+            Appointment testAppointment = new Appointment
+            {
+                Doctor = _doctorService.Get(1),
+                Patient = _patientService.Get(1),
+                Description = "tooth filling"
+            };
+            _appointmentService.Create(testAppointment);
+            testAppointment = new Appointment
+            {
+                Doctor = _doctorService.Get(2),
+                Patient = _patientService.Get(2),
+                Description = "review"
+            };
+            _appointmentService.Create(testAppointment);
         }
     }
 
