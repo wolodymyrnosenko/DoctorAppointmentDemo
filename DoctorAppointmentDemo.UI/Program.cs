@@ -59,8 +59,9 @@ namespace MyDoctorAppointment
                     case MenuMain.Виведення_всіх_візитів:
                         _appointmentService.ShowAll();
                         break;
-                    //case MenuMain.Призначення_візиту:
-                    //    break;
+                    case MenuMain.Призначення_візиту:
+                        _appointmentService.CreateConsole();
+                        break;
                     case MenuMain.Видалення_візиту:
                         _appointmentService.DeleteConsole();
                         break;

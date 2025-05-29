@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "DoctorType": 1,
+    "Experience": 10,
+    "Salary": 0.0,
+    "Name": "nameDoc1",
+    "Surname": "surnameDoc1",
+    "Phone": null,
+    "Email": "doc1@gmail.com",
+    "Id": 1,
+    "CreatedAt": "2025-05-29T09:46:42.1911061+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "DoctorType": 3,
+    "Experience": 20,
+    "Salary": 0.0,
+    "Name": "nameDoc2",
+    "Surname": "surnameDoc2",
+    "Phone": null,
+    "Email": "doc2@gmail.com",
+    "Id": 2,
+    "CreatedAt": "2025-05-29T09:46:42.2442322+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  }
+]

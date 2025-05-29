@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "IllnessType": 3,
+    "AdditionalInfo": "has medical partner insurance",
+    "Address": null,
+    "Name": "namePatient1",
+    "Surname": "surnamePatient1",
+    "Phone": null,
+    "Email": "patient1@gmail.com",
+    "Id": 1,
+    "CreatedAt": "2025-05-29T09:46:42.2587509+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "IllnessType": 5,
+    "AdditionalInfo": "need additional medicine test",
+    "Address": null,
+    "Name": "namePatient2",
+    "Surname": "surnamePatient2",
+    "Phone": null,
+    "Email": "patient2@gmail.com",
+    "Id": 2,
+    "CreatedAt": "2025-05-29T09:46:42.2671894+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  }
+]

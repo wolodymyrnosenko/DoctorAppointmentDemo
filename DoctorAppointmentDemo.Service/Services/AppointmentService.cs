@@ -1,6 +1,7 @@
 ﻿using MyDoctorAppointment.Data.Interfaces;
 using MyDoctorAppointment.Data.Repositories;
 using MyDoctorAppointment.Domain.Entities;
+using MyDoctorAppointment.Domain.Enums;
 using MyDoctorAppointment.Service.Interfaces;
 
 namespace MyDoctorAppointment.Service.Services
@@ -16,6 +17,39 @@ namespace MyDoctorAppointment.Service.Services
 
         public Appointment Create(Appointment appointment)
         {
+            return _appointmentRepository.Create(appointment);
+        }
+        public Appointment CreateConsole()
+        {
+            Appointment appointment = new Appointment();
+            Console.WriteLine("\n---Create Appointment---");
+            Console.Write("Description: ");
+            appointment.Description = Console.ReadLine();
+            Console.Write("Input doctor's ID: ");
+            int id;
+            try
+            {
+                id = int.Parse(Console.ReadLine());
+                Doctor doc = new DoctorRepository().GetById(id);
+                appointment.Doctor = doc;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+            Console.Write("Input patient's ID: ");
+            try
+            {
+                id = int.Parse(Console.ReadLine());
+                Patient patient = new PatientRepository().GetById(id);
+                appointment.Patient = patient;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
             return _appointmentRepository.Create(appointment);
         }
 
