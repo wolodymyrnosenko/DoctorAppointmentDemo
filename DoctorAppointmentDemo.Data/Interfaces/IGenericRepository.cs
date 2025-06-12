@@ -13,6 +13,7 @@ namespace MyDoctorAppointment.Data.Interfaces
         IEnumerable<TSource> GetAll();
 
         bool Delete(int id);
-        public int GetLastId();
+
+        //public int GetLastId();
     }
 }
