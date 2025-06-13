@@ -30,7 +30,7 @@ namespace DoctorAppointmentDemo
             _doctorService = new DoctorService(appSettings, serializationService);
             _patientService = new PatientService(appSettings, serializationService);
             _appointmentService = new AppointmentService(appSettings, serializationService);
-            InitTestEntities();
+            //InitTestEntities();
         }
 
         public void Menu()

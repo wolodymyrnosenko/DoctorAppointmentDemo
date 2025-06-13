@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Database>
+		<Doctors>
+			<LastId>36</LastId>
+			<Path>..\..\..\..\DoctorAppointmentDemo.Data\MockedDatabase\doctors.xml</Path>
+		</Doctors>
+		<Patients>
+			<LastId>6</LastId>
+			<Path>..\..\..\..\DoctorAppointmentDemo.Data\MockedDatabase\patients.xml</Path>
+		</Patients>
+		<Appointments>
+			<LastId>5</LastId>
+			<Path>..\..\..\..\DoctorAppointmentDemo.Data\MockedDatabase\appointments.xml</Path>
+		</Appointments>
+	</Database>
+</Repository>

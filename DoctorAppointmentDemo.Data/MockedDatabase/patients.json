@@ -1,0 +1,98 @@
+[
+  {
+    "IllnessType": 3,
+    "AdditionalInfo": "has medical partner insurance",
+    "Address": null,
+    "Name": "namePatient1",
+    "Surname": "surnamePatient1",
+    "Phone": null,
+    "Email": "patient1@gmail.com",
+    "Id": 1,
+    "CreatedAt": "2025-06-14T00:02:18.0944073+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "IllnessType": 5,
+    "AdditionalInfo": "need additional medicine test",
+    "Address": null,
+    "Name": "namePatient2",
+    "Surname": "surnamePatient2",
+    "Phone": null,
+    "Email": "patient2@gmail.com",
+    "Id": 2,
+    "CreatedAt": "2025-06-14T00:02:26.026062+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "IllnessType": 3,
+    "AdditionalInfo": "has medical partner insurance",
+    "Address": null,
+    "Name": "namePatient1",
+    "Surname": "surnamePatient1",
+    "Phone": null,
+    "Email": "patient1@gmail.com",
+    "Id": 3,
+    "CreatedAt": "2025-06-14T00:03:06.086426+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "IllnessType": 5,
+    "AdditionalInfo": "need additional medicine test",
+    "Address": null,
+    "Name": "namePatient2",
+    "Surname": "surnamePatient2",
+    "Phone": null,
+    "Email": "patient2@gmail.com",
+    "Id": 4,
+    "CreatedAt": "2025-06-14T00:03:06.0961134+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "IllnessType": 3,
+    "AdditionalInfo": "has medical partner insurance",
+    "Address": null,
+    "Name": "namePatient1",
+    "Surname": "surnamePatient1",
+    "Phone": null,
+    "Email": "patient1@gmail.com",
+    "Id": 5,
+    "CreatedAt": "2025-06-14T00:07:26.90041+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "IllnessType": 5,
+    "AdditionalInfo": "need additional medicine test",
+    "Address": null,
+    "Name": "namePatient2",
+    "Surname": "surnamePatient2",
+    "Phone": null,
+    "Email": "patient2@gmail.com",
+    "Id": 6,
+    "CreatedAt": "2025-06-14T00:07:26.907398+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "IllnessType": 3,
+    "AdditionalInfo": "has medical partner insurance",
+    "Address": null,
+    "Name": "namePatient1",
+    "Surname": "surnamePatient1",
+    "Phone": null,
+    "Email": "patient1@gmail.com",
+    "Id": 7,
+    "CreatedAt": "2025-06-14T00:16:23.2033226+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "IllnessType": 5,
+    "AdditionalInfo": "need additional medicine test",
+    "Address": null,
+    "Name": "namePatient2",
+    "Surname": "surnamePatient2",
+    "Phone": null,
+    "Email": "patient2@gmail.com",
+    "Id": 8,
+    "CreatedAt": "2025-06-14T00:16:23.2104049+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  }
+]

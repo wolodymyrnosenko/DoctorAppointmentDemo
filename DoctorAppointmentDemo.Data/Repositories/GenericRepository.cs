@@ -1,4 +1,4 @@
-﻿using DoctorAppointmentDemo.Data.Configuration;
+﻿//using DoctorAppointmentDemo.Data.Configuration;
 using DoctorAppointmentDemo.Data.Interfaces;
 using DoctorAppointmentDemo.Domain.Entities;
 using Newtonsoft.Json;
@@ -25,7 +25,10 @@ namespace DoctorAppointmentDemo.Data.Repositories
             source.Id = ++LastId;
             source.CreatedAt = DateTime.Now;
 
-            File.WriteAllText(Path, JsonConvert.SerializeObject(GetAll().Append(source), Formatting.Indented));
+            var sources = GetAll().Append(source).ToList();
+            SerializationService.Serialize(Path, sources);
+
+            //File.WriteAllText(Path, JsonConvert.SerializeObject(GetAll().Append(source), Formatting.Indented));
             SaveLastId();
 
             return source;
@@ -36,7 +39,9 @@ namespace DoctorAppointmentDemo.Data.Repositories
             if (GetById(id) is null)
                 return false;
 
-            File.WriteAllText(Path, JsonConvert.SerializeObject(GetAll().Where(x => x.Id != id), Formatting.Indented));
+            SerializationService.Serialize(Path, GetAll().Where(x => x.Id != id));
+
+            //File.WriteAllText(Path, JsonConvert.SerializeObject(GetAll().Where(x => x.Id != id), Formatting.Indented));
             return true;
         }
 
@@ -94,7 +99,12 @@ namespace DoctorAppointmentDemo.Data.Repositories
             source.UpdatedAt = DateTime.Now;
             source.Id = id;
 
-            File.WriteAllText(Path, JsonConvert.SerializeObject(GetAll().Select(x => x.Id == id ? source : x), Formatting.Indented));
+            //var data = GetAll().Select(x => x.Id == id ? source : x).ToList();
+            //serializationService.Serialize(data, Path);
+
+            //File.WriteAllText(Path, JsonConvert.SerializeObject(GetAll().Select(x => x.Id == id ? source : x), Formatting.Indented));
+
+            SerializationService.Serialize(Path, GetAll().Select(x => x.Id == id ? source : x));
 
             return source;
         }
