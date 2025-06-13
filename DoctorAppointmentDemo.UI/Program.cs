@@ -1,11 +1,12 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using DoctorAppointmentDemo.Service.Services;
 using DoctorAppointmentDemo.UI.EnumsMenu;
-using MyDoctorAppointment.Domain.Entities;
-using MyDoctorAppointment.Service.Interfaces;
-using MyDoctorAppointment.Service.Services;
+using DoctorAppointmentDemo.Data.Configuration;
+using DoctorAppointmentDemo.Domain.Entities;
+using DoctorAppointmentDemo.Service.Interfaces;
 
-namespace MyDoctorAppointment
+namespace DoctorAppointmentDemo
 { 
         public static class Program
     {
@@ -18,22 +19,22 @@ namespace MyDoctorAppointment
 
             foreach (var menuItem in Enum.GetValues(typeof(MenuSaveFormat)))
             {
-                Console.WriteLine($"{(int)menuItem + 1} - {menuItem.ToString()}");
+                Console.WriteLine($"{(int)menuItem} - {menuItem.ToString()}");
             }
             Console.Write("Оберіть формат даних: ");
             for(int i = 0; i < 1; )
             {
                 try
                 {
-                    switch ((MenuSaveFormat)(Convert.ToInt32(Console.ReadKey().KeyChar.ToString()) - 1))
+                    switch ((MenuSaveFormat)Convert.ToInt32(Console.ReadKey().KeyChar.ToString()))
                     {
-                        case MenuSaveFormat.JSON:
-                            doctorAppointment = new DoctorAppointment(Constants.XmlAppSettingsPath, new XmlDataSerializerService());
-                            i++;
-                            break;
                         case MenuSaveFormat.XML:
-                            doctorAppointment = new DoctorAppointment(Constants.JsonAppSettingsPath, new JsonDataSerializerService());
                             i++;
+                            doctorAppointment = new DoctorAppointment(Constants.XmlAppSettingsPath, new XmlDataSerializerService());
+                            break;
+                        case MenuSaveFormat.JSON:
+                            i++;
+                            doctorAppointment = new DoctorAppointment(Constants.JsonAppSettingsPath, new JsonDataSerializerService());
                             break;
                     }
                 }

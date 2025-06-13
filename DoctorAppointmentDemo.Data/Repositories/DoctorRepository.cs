@@ -1,8 +1,8 @@
-﻿using MyDoctorAppointment.Data.Configuration;
-using MyDoctorAppointment.Data.Interfaces;
-using MyDoctorAppointment.Domain.Entities;
+﻿//using DoctorAppointmentDemo.Data.Configuration;
+using DoctorAppointmentDemo.Data.Interfaces;
+using DoctorAppointmentDemo.Domain.Entities;
 
-namespace MyDoctorAppointment.Data.Repositories
+namespace DoctorAppointmentDemo.Data.Repositories
 {
     public class DoctorRepository : GenericRepository<Doctor>, IDoctorRepository
     {
@@ -12,13 +12,23 @@ namespace MyDoctorAppointment.Data.Repositories
 
         public override int LastId { get; set; }
 
-        public DoctorRepository()
+        public DoctorRepository(string appSettings, ISerializationService serializationService) : base(appSettings, serializationService)
         {
-            dynamic result = ReadFromAppSettings();
+            this.serializationService = serializationService;
+
+            var result = ReadFromAppSettings();
 
             Path = result.Database.Doctors.Path;
             LastId = result.Database.Doctors.LastId;
         }
+
+        //public DoctorRepository()
+        //{
+        //    dynamic result = ReadFromAppSettings();
+
+        //    Path = result.Database.Doctors.Path;
+        //    LastId = result.Database.Doctors.LastId;
+        //}
 
         //public override void ShowInfo(Doctor doctor)
         //{
@@ -27,10 +37,18 @@ namespace MyDoctorAppointment.Data.Repositories
 
         protected override void SaveLastId()
         {
-            dynamic result = ReadFromAppSettings();
+            //dynamic result = ReadFromAppSettings();
+            var result = ReadFromAppSettings();
             result.Database.Doctors.LastId = LastId;
 
-            File.WriteAllText(Constants.AppSettingsPath, result.ToString());
+            //File.WriteAllText(Constants.AppSettingsPath, result.ToString());
+
+            serializationService.Serialize(AppSettings, result);
+        }
+
+        public override void ShowInfo(Doctor source)
+        {
+            throw new NotImplementedException();//...................
         }
     }
 }

@@ -1,13 +1,15 @@
-﻿using MyDoctorAppointment.Domain.Entities;
+﻿using DoctorAppointmentDemo.Domain.Entities;
+using DoctorAppointmentDemo.Service.ViewModels;
 
-namespace MyDoctorAppointment.Service.Interfaces
+namespace DoctorAppointmentDemo.Service.Interfaces
 {
     public interface IPatientService
     {
         Patient Create(Patient patient);
         Patient CreateConsole();
 
-        IEnumerable<Patient> GetAll();
+        //IEnumerable<Patient> GetAll();
+        IEnumerable<PatientViewModel> GetAll();
 
         Patient? Get(int id);
 

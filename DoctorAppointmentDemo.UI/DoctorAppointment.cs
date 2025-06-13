@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DoctorAppointmentDemo.UI.EnumsMenu;
-using MyDoctorAppointment.Data.Interfaces;
-using MyDoctorAppointment.Domain.Entities;
-using MyDoctorAppointment.Service.Interfaces;
-using MyDoctorAppointment.Service.Services;
+using DoctorAppointmentDemo.Data.Interfaces;
+using DoctorAppointmentDemo.Domain.Entities;
+using DoctorAppointmentDemo.Service.Interfaces;
+using DoctorAppointmentDemo.Service.Services;
 
-namespace MyDoctorAppointment
+namespace DoctorAppointmentDemo
 {
     public class DoctorAppointment
     {
@@ -34,6 +30,7 @@ namespace MyDoctorAppointment
             _doctorService = new DoctorService(appSettings, serializationService);
             _patientService = new PatientService(appSettings, serializationService);
             _appointmentService = new AppointmentService(appSettings, serializationService);
+            InitTestEntities();
         }
 
         public void Menu()

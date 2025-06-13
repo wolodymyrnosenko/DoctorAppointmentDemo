@@ -1,18 +1,29 @@
-﻿using MyDoctorAppointment.Data.Interfaces;
-using MyDoctorAppointment.Data.Repositories;
-using MyDoctorAppointment.Domain.Entities;
-using MyDoctorAppointment.Domain.Enums;
-using MyDoctorAppointment.Service.Interfaces;
+﻿using DoctorAppointmentDemo.Data.Interfaces;
+using DoctorAppointmentDemo.Data.Repositories;
+using DoctorAppointmentDemo.Domain.Entities;
+using DoctorAppointmentDemo.Domain.Enums;
+using DoctorAppointmentDemo.Service.Extensions;
+using DoctorAppointmentDemo.Service.Interfaces;
+using DoctorAppointmentDemo.Service.ViewModels;
 
-namespace MyDoctorAppointment.Service.Services
+namespace DoctorAppointmentDemo.Service.Services
 {
     public class AppointmentService : IAppointmentService
     {
         private readonly IAppointmentRepository _appointmentRepository;
+        private string Appsettings {  get; set; }
+        private ISerializationService SerializationService { get; set; }
 
-        public AppointmentService()
+        //public AppointmentService()
+        //{
+        //    _appointmentRepository = new AppointmentRepository();
+        //}
+
+        public AppointmentService(string appSettings, ISerializationService serializationService)
         {
-            _appointmentRepository = new AppointmentRepository();
+            _appointmentRepository = new AppointmentRepository(appSettings, serializationService);
+            Appsettings = appSettings;
+            SerializationService = serializationService;
         }
 
         public Appointment Create(Appointment appointment)
@@ -30,7 +41,7 @@ namespace MyDoctorAppointment.Service.Services
             try
             {
                 id = int.Parse(Console.ReadLine());
-                Doctor doc = new DoctorRepository().GetById(id);
+                Doctor doc = new DoctorRepository(Appsettings, SerializationService).GetById(id);
                 appointment.Doctor = doc;
             }
             catch (Exception ex)
@@ -42,7 +53,7 @@ namespace MyDoctorAppointment.Service.Services
             try
             {
                 id = int.Parse(Console.ReadLine());
-                Patient patient = new PatientRepository().GetById(id);
+                Patient patient = new PatientRepository(Appsettings, SerializationService).GetById(id);
                 appointment.Patient = patient;
             }
             catch (Exception ex)
@@ -70,9 +81,15 @@ namespace MyDoctorAppointment.Service.Services
             return _appointmentRepository.GetById(id);
         }
 
-        public IEnumerable<Appointment> GetAll()
+        //public IEnumerable<Appointment> GetAll()
+        //{
+        //    return _appointmentRepository.GetAll();
+        //}
+        public IEnumerable<AppointmentViewModel> GetAll()
         {
-            return _appointmentRepository.GetAll();
+            var appointments = _appointmentRepository.GetAll();
+            var appointmentViewModels = appointments.Select(x => x.ConvertTo());
+            return appointmentViewModels;
         }
 
         public Appointment Update(int id, Appointment appointment)

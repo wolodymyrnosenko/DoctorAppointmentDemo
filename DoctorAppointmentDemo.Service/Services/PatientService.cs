@@ -1,18 +1,25 @@
-﻿using MyDoctorAppointment.Data.Interfaces;
-using MyDoctorAppointment.Data.Repositories;
-using MyDoctorAppointment.Domain.Entities;
-using MyDoctorAppointment.Domain.Enums;
-using MyDoctorAppointment.Service.Interfaces;
+﻿using DoctorAppointmentDemo.Data.Interfaces;
+using DoctorAppointmentDemo.Data.Repositories;
+using DoctorAppointmentDemo.Domain.Entities;
+using DoctorAppointmentDemo.Domain.Enums;
+using DoctorAppointmentDemo.Service.Extensions;
+using DoctorAppointmentDemo.Service.Interfaces;
+using DoctorAppointmentDemo.Service.ViewModels;
 
-namespace MyDoctorAppointment.Service.Services
+namespace DoctorAppointmentDemo.Service.Services
 {
     public class PatientService : IPatientService
     {
         private readonly IPatientRepository _patientRepository;
 
-        public PatientService()
+        //public PatientService()
+        //{
+        //    _patientRepository = new PatientRepository();
+        //}
+
+        public PatientService(string appSettings, ISerializationService serializationService)
         {
-            _patientRepository = new PatientRepository();
+            _patientRepository = new PatientRepository(appSettings, serializationService);
         }
 
         public Patient Create(Patient patient)
@@ -64,9 +71,16 @@ namespace MyDoctorAppointment.Service.Services
             return _patientRepository.GetById(id);
         }
 
-        public IEnumerable<Patient> GetAll()
+        //public IEnumerable<Patient> GetAll()
+        //{
+        //    return _patientRepository.GetAll();
+        //}
+
+        public IEnumerable<PatientViewModel> GetAll()
         {
-            return _patientRepository.GetAll();
+            var patients = _patientRepository.GetAll();
+            var patientViewModels = patients.Select(x => x.ConvertTo());
+            return patientViewModels;
         }
 
         public Patient Update(int id, Patient patient)

@@ -2,7 +2,7 @@
 {
     public enum MenuSaveFormat
     {
-        XML,
+        XML = 1,
         JSON
     }
 }

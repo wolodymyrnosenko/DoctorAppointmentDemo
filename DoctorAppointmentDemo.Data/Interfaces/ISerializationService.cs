@@ -1,6 +1,4 @@
-﻿using MyDoctorAppointment.Domain.Entities;
-
-namespace MyDoctorAppointment.Data.Interfaces
+﻿namespace DoctorAppointmentDemo.Data.Interfaces
 {
     public interface ISerializationService
     {

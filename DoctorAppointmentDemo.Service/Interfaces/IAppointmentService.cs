@@ -1,6 +1,7 @@
-﻿using MyDoctorAppointment.Domain.Entities;
+﻿using DoctorAppointmentDemo.Domain.Entities;
+using DoctorAppointmentDemo.Service.ViewModels;
 
-namespace MyDoctorAppointment.Service.Interfaces
+namespace DoctorAppointmentDemo.Service.Interfaces
 {
     public interface IAppointmentService
     {
@@ -8,7 +9,8 @@ namespace MyDoctorAppointment.Service.Interfaces
         Appointment CreateConsole();
 
 
-        IEnumerable<Appointment> GetAll();
+        //IEnumerable<Appointment> GetAll();
+        IEnumerable<AppointmentViewModel> GetAll();
 
         Appointment? Get(int id);
 
