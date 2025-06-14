@@ -79,7 +79,7 @@ namespace DoctorAppointmentDemo.Service.Extensions
                 Surname = patient.Surname,
                 Phone = patient.Phone,
                 Email = patient.Email,
-                IllnessType = patient.IllnessType,
+                IllnessType = illnessType,
                 AdditionalInfo = patient.AdditionalInfo,
                 Address = patient.Address
             };

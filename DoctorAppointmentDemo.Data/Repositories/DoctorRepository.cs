@@ -39,11 +39,14 @@ namespace DoctorAppointmentDemo.Data.Repositories
         {
             //dynamic result = ReadFromAppSettings();
             var result = ReadFromAppSettings();
+
             result.Database.Doctors.LastId = LastId;
 
             //File.WriteAllText(Constants.AppSettingsPath, result.ToString());
 
             serializationService.Serialize(AppSettings, result);
+
+            //File.WriteAllText(Constants.JsonAppSettingsPath, result.ToString());
         }
 
         public override void ShowInfo(Doctor source)

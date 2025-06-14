@@ -1,7 +1,7 @@
 ﻿//using DoctorAppointmentDemo.Data.Configuration;
 using DoctorAppointmentDemo.Data.Interfaces;
 using DoctorAppointmentDemo.Domain.Entities;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 
 namespace DoctorAppointmentDemo.Data.Repositories
 {
@@ -26,6 +26,7 @@ namespace DoctorAppointmentDemo.Data.Repositories
             source.CreatedAt = DateTime.Now;
 
             var sources = GetAll().Append(source).ToList();
+
             SerializationService.Serialize(Path, sources);
 
             //File.WriteAllText(Path, JsonConvert.SerializeObject(GetAll().Append(source), Formatting.Indented));

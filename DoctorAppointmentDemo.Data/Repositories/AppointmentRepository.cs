@@ -44,6 +44,7 @@ namespace DoctorAppointmentDemo.Data.Repositories
         {
             //dynamic result = ReadFromAppSettings();
             var result = ReadFromAppSettings();
+
             result.Database.Appointments.LastId = LastId;
 
             //File.WriteAllText(Constants.AppSettingsPath, result.ToString());

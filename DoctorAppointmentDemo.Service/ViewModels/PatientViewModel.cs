@@ -1,6 +1,4 @@
-﻿using DoctorAppointmentDemo.Domain.Enums;
-
-namespace DoctorAppointmentDemo.Service.ViewModels
+﻿namespace DoctorAppointmentDemo.Service.ViewModels
 {
     public class PatientViewModel
     {
@@ -12,7 +10,7 @@ namespace DoctorAppointmentDemo.Service.ViewModels
 
         public string? Email { get; set; }
 
-        public IllnessTypes IllnessType { get; set; }
+        public string? IllnessType { get; set; }
 
         public string? AdditionalInfo { get; set; }
 

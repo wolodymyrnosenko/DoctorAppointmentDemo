@@ -15,6 +15,7 @@ namespace DoctorAppointmentDemo.Data.Interfaces
         bool Delete(int id);
 
         public int GetLastId();
+
         void ShowInfo(TSource source);
     }
 }
