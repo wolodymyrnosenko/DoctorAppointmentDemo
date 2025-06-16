@@ -4,6 +4,7 @@ using DoctorAppointmentDemo.Data.Interfaces;
 using DoctorAppointmentDemo.Domain.Entities;
 using DoctorAppointmentDemo.Service.Interfaces;
 using DoctorAppointmentDemo.Service.Services;
+using System.Xml.Serialization;//
 
 namespace DoctorAppointmentDemo
 {
@@ -12,6 +13,10 @@ namespace DoctorAppointmentDemo
         private readonly IDoctorService _doctorService;
         private readonly IPatientService _patientService;
         private readonly IAppointmentService _appointmentService;
+
+
+        private string AppSet;//....
+        private ISerializationService SerializationServ;//....
 
         //MenuMain menuMain;
         //MenuAppointment menuAppointment;
@@ -31,10 +36,70 @@ namespace DoctorAppointmentDemo
             _patientService = new PatientService(appSettings, serializationService);
             _appointmentService = new AppointmentService(appSettings, serializationService);
             //InitTestEntities();
+            
+            AppSet = appSettings;//....
+            SerializationServ = serializationService;//....
         }
 
         public void Menu()
         {
+
+
+            //testing serialize and deserialize XML data
+            //Doctor testDoc = new Doctor
+            //{
+            //    Name = "nameDoc2",
+            //    Surname = "surnameDoc2",
+            //    DoctorType = Domain.Enums.DoctorTypes.Dentist,
+            //    Email = "doc1@gmail.com",
+            //    Experience = 30
+            //};
+            //_doctorService.Create(testDoc);
+            //var docs = _doctorService.GetAll();
+            //XmlSerializer xmlSerializer = new XmlSerializer(typeof(Doctor));
+            //using (FileStream fs = new FileStream("../../../../DoctorAppointmentDemo.Data/MockedDatabase/doctors.xml", FileMode.OpenOrCreate))
+            //{
+            //    xmlSerializer.Serialize(fs, testDoc);
+
+            //    Console.WriteLine("Object has been serialized");
+            //}
+            var docServ = new DoctorService(AppSet, SerializationServ);
+            //docServ.Create(testDoc);
+            //var sources = docServ.GetAll();
+
+
+            List <Doctor> lstDoc = new()
+            {
+                new Doctor
+                {
+                    Name = "nameDoc2",
+                    Surname = "surnameDoc2",
+                    DoctorType = Domain.Enums.DoctorTypes.Dentist,
+                    Email = "doc2@gmail.com",
+                    Experience = 30
+                },
+                new Doctor
+                {
+                    Name = "nameDoc3",
+                    Surname = "surnameDoc3",
+                    DoctorType = Domain.Enums.DoctorTypes.Dentist,
+                    Email = "doc3@gmail.com",
+                    Experience = 50
+                },
+            };
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Doctor>));
+            using (FileStream fs = new FileStream("../../../../DoctorAppointmentDemo.Data/MockedDatabase/doctors.xml", FileMode.OpenOrCreate))
+            {
+                //xmlSerializer.Serialize(fs, lstDoc);
+
+                Console.WriteLine("Doctors has been serialized");
+            }
+            var sources = docServ.GetAll();
+            var sources2 = _doctorService.GetAll();
+            var sources3 = docServ.GetAll();
+
+            //SerializationService.Serialize(Path, sources);
+
             MenuMain menuMain;
             do
             {

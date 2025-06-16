@@ -1,4 +1,5 @@
 ﻿//using DoctorAppointmentDemo.Data.Configuration;
+using System.Xml.Serialization;
 using DoctorAppointmentDemo.Data.Interfaces;
 using DoctorAppointmentDemo.Domain.Entities;
 
@@ -6,6 +7,7 @@ namespace DoctorAppointmentDemo.Data.Repositories
 {
     public class DoctorRepository : GenericRepository<Doctor>, IDoctorRepository
     {
+        //[XmlIgnore]//....
         private readonly ISerializationService serializationService;
 
         public override string Path { get; set; }
@@ -22,13 +24,13 @@ namespace DoctorAppointmentDemo.Data.Repositories
             LastId = result.Database.Doctors.LastId;
         }
 
-        //public DoctorRepository()
-        //{
-        //    dynamic result = ReadFromAppSettings();
+        public DoctorRepository()//....
+        {
+            //dynamic result = ReadFromAppSettings();
 
-        //    Path = result.Database.Doctors.Path;
-        //    LastId = result.Database.Doctors.LastId;
-        //}
+            //Path = result.Database.Doctors.Path;
+            //LastId = result.Database.Doctors.LastId;
+        }
 
         //public override void ShowInfo(Doctor doctor)
         //{

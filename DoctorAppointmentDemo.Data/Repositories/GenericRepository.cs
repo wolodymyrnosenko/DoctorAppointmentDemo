@@ -1,4 +1,5 @@
 ﻿//using DoctorAppointmentDemo.Data.Configuration;
+using System.Xml.Serialization;
 using DoctorAppointmentDemo.Data.Interfaces;
 using DoctorAppointmentDemo.Domain.Entities;
 //using Newtonsoft.Json;
@@ -20,6 +21,10 @@ namespace DoctorAppointmentDemo.Data.Repositories
             AppSettings = appSettings;
             SerializationService = serializationService;
         }
+
+
+        public GenericRepository() { }//....
+
         public TSource Create(TSource source)
         {
             source.Id = ++LastId;
@@ -62,9 +67,9 @@ namespace DoctorAppointmentDemo.Data.Repositories
             ////}
 
             ////return JsonConvert.DeserializeObject<List<TSource>>(json)!;
-            
+
             //..
-            
+
             //if (!File.Exists(Path))
             //{
             //    return new List<TSource>();
@@ -83,11 +88,13 @@ namespace DoctorAppointmentDemo.Data.Repositories
             //    file = "[]";
             //}
 
-            //return serializationService.Deserialize<List<TSource>>(Path) ?? new List<TSource>();
+            //return SerializationService.Deserialize<List<TSource>>(Path) ?? new List<TSource>();
 
             //return JsonConvert.DeserializeObject<List<TSource>>(json)!;
 
-            return SerializationService.Deserialize<IEnumerable<TSource>>(Path);
+
+            return SerializationService.Deserialize<List<TSource>>(Path);//....
+            //return SerializationService.Deserialize<IEnumerable<TSource>>(Path);
         }
 
         public TSource? GetById(int id)
