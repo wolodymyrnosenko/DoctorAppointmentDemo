@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using DoctorAppointmentDemo.Data.Interfaces;
 
 namespace DoctorAppointmentDemo.Service.Services
@@ -23,6 +24,14 @@ namespace DoctorAppointmentDemo.Service.Services
             {
                 formatter.Serialize(fs, data);
             }
+
+            //File.WriteAllText(path, string.Empty);
+            //var formatter = new XmlSerializer(typeof(List<T>));
+
+            //using (var stream = new StreamWriter(path))
+            //{
+            //    formatter.Serialize(stream, data);
+            //}
         }
     }
 }

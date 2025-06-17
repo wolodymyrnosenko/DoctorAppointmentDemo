@@ -43,6 +43,15 @@ namespace DoctorAppointmentDemo.Data.Repositories
 
             SerializationService.Serialize(Path, GetAll().Where(x => x.Id != id));
 
+            //List<TSource> getAll = SerializationService.Deserialize<List<TSource>>(Path);
+            //List<TSource> allWithoutDeleted = new List<TSource>();
+            //foreach (TSource source in getAll)
+            //{
+            //    if (source.Id != id)
+            //        allWithoutDeleted.Add(source);
+            //}
+            //SerializationService.Serialize(Path, allWithoutDeleted);
+
             return true;
         }
 
