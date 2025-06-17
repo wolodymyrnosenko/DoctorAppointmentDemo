@@ -4,22 +4,22 @@
     <Id>1</Id>
     <CreatedAt>0001-01-01T00:00:00</CreatedAt>
     <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
-    <Name>nameDoc2</Name>
-    <Surname>surnameDoc2</Surname>
-    <Email>doc2@gmail.com</Email>
+    <Name>nameDoc1</Name>
+    <Surname>surnameDoc1</Surname>
+    <Email>doc1@gmail.com</Email>
     <DoctorType>Dentist</DoctorType>
-    <Experience>30</Experience>
+    <Experience>10</Experience>
     <Salary>0</Salary>
   </Doctor>
   <Doctor>
     <Id>2</Id>
     <CreatedAt>0001-01-01T00:00:00</CreatedAt>
     <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
-    <Name>nameDoc3</Name>
-    <Surname>surnameDoc3</Surname>
-    <Email>doc3@gmail.com</Email>
-    <DoctorType>Dentist</DoctorType>
-    <Experience>50</Experience>
+    <Name>nameDoc2</Name>
+    <Surname>surnameDoc2</Surname>
+    <Email>doc2@gmail.com</Email>
+    <DoctorType>FamilyDoctor</DoctorType>
+    <Experience>20</Experience>
     <Salary>0</Salary>
   </Doctor>
 </ArrayOfDoctor>

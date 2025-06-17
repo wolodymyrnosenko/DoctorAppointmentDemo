@@ -9,7 +9,7 @@
       "Phone": null,
       "Email": "patient1@gmail.com",
       "Id": 1,
-      "CreatedAt": "2025-06-14T19:32:19.9656808+03:00",
+      "CreatedAt": "2025-06-17T09:45:50.2687102+03:00",
       "UpdatedAt": "0001-01-01T00:00:00"
     },
     "Doctor": {
@@ -21,46 +21,14 @@
       "Phone": null,
       "Email": "doc1@gmail.com",
       "Id": 1,
-      "CreatedAt": "2025-06-14T19:32:19.2389244+03:00",
+      "CreatedAt": "2025-06-17T09:45:50.2182064+03:00",
       "UpdatedAt": "0001-01-01T00:00:00"
     },
     "DateTimeFrom": "0001-01-01T00:00:00",
     "DateTimeTo": "0001-01-01T00:00:00",
     "Description": "tooth filling",
     "Id": 1,
-    "CreatedAt": "2025-06-14T19:32:19.9795091+03:00",
-    "UpdatedAt": "0001-01-01T00:00:00"
-  },
-  {
-    "Patient": {
-      "IllnessType": 3,
-      "AdditionalInfo": "has medical partner insurance",
-      "Address": null,
-      "Name": "namePatient1",
-      "Surname": "surnamePatient1",
-      "Phone": null,
-      "Email": "patient1@gmail.com",
-      "Id": 1,
-      "CreatedAt": "2025-06-14T19:32:19.9656808+03:00",
-      "UpdatedAt": "0001-01-01T00:00:00"
-    },
-    "Doctor": {
-      "DoctorType": 1,
-      "Experience": 10,
-      "Salary": 0.0,
-      "Name": "nameDoc1",
-      "Surname": "surnameDoc1",
-      "Phone": null,
-      "Email": "doc1@gmail.com",
-      "Id": 1,
-      "CreatedAt": "2025-06-14T19:32:19.2389244+03:00",
-      "UpdatedAt": "0001-01-01T00:00:00"
-    },
-    "DateTimeFrom": "0001-01-01T00:00:00",
-    "DateTimeTo": "0001-01-01T00:00:00",
-    "Description": "tooth filling",
-    "Id": 2,
-    "CreatedAt": "2025-06-14T19:33:43.0781813+03:00",
+    "CreatedAt": "2025-06-17T09:45:50.2867275+03:00",
     "UpdatedAt": "0001-01-01T00:00:00"
   },
   {
@@ -73,7 +41,7 @@
       "Phone": null,
       "Email": "patient2@gmail.com",
       "Id": 2,
-      "CreatedAt": "2025-06-14T19:32:19.9734686+03:00",
+      "CreatedAt": "2025-06-17T09:45:50.2772346+03:00",
       "UpdatedAt": "0001-01-01T00:00:00"
     },
     "Doctor": {
@@ -85,14 +53,46 @@
       "Phone": null,
       "Email": "doc2@gmail.com",
       "Id": 2,
-      "CreatedAt": "2025-06-14T19:32:19.9522868+03:00",
+      "CreatedAt": "2025-06-17T09:45:50.2586805+03:00",
       "UpdatedAt": "0001-01-01T00:00:00"
     },
     "DateTimeFrom": "0001-01-01T00:00:00",
     "DateTimeTo": "0001-01-01T00:00:00",
     "Description": "review",
+    "Id": 2,
+    "CreatedAt": "2025-06-17T09:45:50.2924511+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "Patient": {
+      "IllnessType": 5,
+      "AdditionalInfo": "need additional medicine test",
+      "Address": null,
+      "Name": "namePatient2",
+      "Surname": "surnamePatient2",
+      "Phone": null,
+      "Email": "patient2@gmail.com",
+      "Id": 2,
+      "CreatedAt": "2025-06-17T09:45:50.2772346+03:00",
+      "UpdatedAt": "0001-01-01T00:00:00"
+    },
+    "Doctor": {
+      "DoctorType": 3,
+      "Experience": 20,
+      "Salary": 0.0,
+      "Name": "nameDoc2",
+      "Surname": "surnameDoc2",
+      "Phone": null,
+      "Email": "doc2@gmail.com",
+      "Id": 2,
+      "CreatedAt": "2025-06-17T09:45:50.2586805+03:00",
+      "UpdatedAt": "0001-01-01T00:00:00"
+    },
+    "DateTimeFrom": "0001-01-01T00:00:00",
+    "DateTimeTo": "0001-01-01T00:00:00",
+    "Description": "adfdf;",
     "Id": 3,
-    "CreatedAt": "2025-06-14T19:33:43.0842412+03:00",
+    "CreatedAt": "2025-06-17T10:49:52.7273128+03:00",
     "UpdatedAt": "0001-01-01T00:00:00"
   }
 ]

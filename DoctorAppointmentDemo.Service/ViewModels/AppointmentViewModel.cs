@@ -8,9 +8,9 @@ namespace DoctorAppointmentDemo.Service.ViewModels
 
         public Doctor? Doctor { get; set; }//? what parameter in ViewModel? (string or Doctor)
 
-        public DateTime DateTimeFrom { get; set; }//? what parameter in ViewModel? (string or DateTime)
+        public DateTime DateTimeFrom { get; set; }
 
-        public DateTime DateTimeTo { get; set; }//? what parameter in ViewModel? (string or DateTime)
+        public DateTime DateTimeTo { get; set; }
 
         public string? Description { get; set; }
     }

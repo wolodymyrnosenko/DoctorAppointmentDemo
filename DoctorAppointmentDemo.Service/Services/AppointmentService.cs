@@ -14,11 +14,6 @@ namespace DoctorAppointmentDemo.Service.Services
         private string Appsettings {  get; set; }
         private ISerializationService SerializationService { get; set; }
 
-        //public AppointmentService()
-        //{
-        //    _appointmentRepository = new AppointmentRepository();
-        //}
-
         public AppointmentService(string appSettings, ISerializationService serializationService)
         {
             _appointmentRepository = new AppointmentRepository(appSettings, serializationService);
@@ -81,10 +76,6 @@ namespace DoctorAppointmentDemo.Service.Services
             return _appointmentRepository.GetById(id);
         }
 
-        //public IEnumerable<Appointment> GetAll()
-        //{
-        //    return _appointmentRepository.GetAll();
-        //}
         public IEnumerable<AppointmentViewModel> GetAll()
         {
             var appointments = _appointmentRepository.GetAll();
@@ -115,12 +106,6 @@ namespace DoctorAppointmentDemo.Service.Services
         public void ShowAll()
         {
             Console.WriteLine();
-            //var appointments = _appointmentRepository.GetAll();
-            //if (_appointmentRepository.GetAll() == null)
-            //{
-            //    Console.WriteLine("\nEmpty");
-            //    return;
-            //}
             bool crutchToShowEmpty = true;
             for (int i = 1; i <= _appointmentRepository.GetLastId(); i++)
             {

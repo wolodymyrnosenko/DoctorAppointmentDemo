@@ -1,3 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfPatient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Patient>
+    <Id>1</Id>
+    <CreatedAt>0001-01-01T00:00:00</CreatedAt>
+    <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+    <Name>namePatient1</Name>
+    <Surname>surnamePatient1</Surname>
+    <Email>patient1@gmail.com</Email>
+    <IllnessType>DentalDisease</IllnessType>
+    <AdditionalInfo>has medical partner insurance</AdditionalInfo>
+  </Patient>
+  <Patient>
+    <Id>2</Id>
+    <CreatedAt>0001-01-01T00:00:00</CreatedAt>
+    <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+    <Name>namePatient2</Name>
+    <Surname>surnamePatient2</Surname>
+    <Email>patient2@gmail.com</Email>
+    <IllnessType>Ambulance</IllnessType>
+    <AdditionalInfo>need additional medicine test</AdditionalInfo>
+  </Patient>
 </ArrayOfPatient>

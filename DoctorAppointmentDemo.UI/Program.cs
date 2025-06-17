@@ -1,10 +1,7 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using System.Text;
+﻿using System.Text;
 using DoctorAppointmentDemo.Service.Services;
 using DoctorAppointmentDemo.UI.EnumsMenu;
 using DoctorAppointmentDemo.Data.Configuration;
-using DoctorAppointmentDemo.Domain.Entities;
-using DoctorAppointmentDemo.Service.Interfaces;
 
 namespace DoctorAppointmentDemo
 { 

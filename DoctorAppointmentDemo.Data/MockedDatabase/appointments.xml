@@ -1,5 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfAppointment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<Appointment>
-	</Appointment>
+  <Appointment>
+    <Id>0</Id>
+    <CreatedAt>0001-01-01T00:00:00</CreatedAt>
+    <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+    <DateTimeFrom>0001-01-01T00:00:00</DateTimeFrom>
+    <DateTimeTo>0001-01-01T00:00:00</DateTimeTo>
+  </Appointment>
+  <Appointment>
+    <Id>1</Id>
+    <CreatedAt>2025-06-17T11:51:57.9363349+03:00</CreatedAt>
+    <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+    <Patient>
+      <Id>2</Id>
+      <CreatedAt>0001-01-01T00:00:00</CreatedAt>
+      <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+      <Name>namePatient2</Name>
+      <Surname>surnamePatient2</Surname>
+      <Email>patient2@gmail.com</Email>
+      <IllnessType>Ambulance</IllnessType>
+      <AdditionalInfo>need additional medicine test</AdditionalInfo>
+    </Patient>
+    <Doctor>
+      <Id>1</Id>
+      <CreatedAt>0001-01-01T00:00:00</CreatedAt>
+      <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+      <Name>nameDoc1</Name>
+      <Surname>surnameDoc1</Surname>
+      <Email>doc1@gmail.com</Email>
+      <DoctorType>Dentist</DoctorType>
+      <Experience>10</Experience>
+      <Salary>0</Salary>
+    </Doctor>
+    <DateTimeFrom>0001-01-01T00:00:00</DateTimeFrom>
+    <DateTimeTo>0001-01-01T00:00:00</DateTimeTo>
+    <Description>test appointment 1</Description>
+  </Appointment>
+  <Appointment>
+    <Id>2</Id>
+    <CreatedAt>2025-06-17T11:52:36.3279113+03:00</CreatedAt>
+    <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+    <Patient>
+      <Id>1</Id>
+      <CreatedAt>0001-01-01T00:00:00</CreatedAt>
+      <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+      <Name>namePatient1</Name>
+      <Surname>surnamePatient1</Surname>
+      <Email>patient1@gmail.com</Email>
+      <IllnessType>DentalDisease</IllnessType>
+      <AdditionalInfo>has medical partner insurance</AdditionalInfo>
+    </Patient>
+    <Doctor>
+      <Id>1</Id>
+      <CreatedAt>0001-01-01T00:00:00</CreatedAt>
+      <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+      <Name>nameDoc1</Name>
+      <Surname>surnameDoc1</Surname>
+      <Email>doc1@gmail.com</Email>
+      <DoctorType>Dentist</DoctorType>
+      <Experience>10</Experience>
+      <Salary>0</Salary>
+    </Doctor>
+    <DateTimeFrom>0001-01-01T00:00:00</DateTimeFrom>
+    <DateTimeTo>0001-01-01T00:00:00</DateTimeTo>
+    <Description>test appointment 2</Description>
+  </Appointment>
+  <Appointment>
+    <Id>3</Id>
+    <CreatedAt>2025-06-17T11:53:21.9299425+03:00</CreatedAt>
+    <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+    <Patient>
+      <Id>2</Id>
+      <CreatedAt>0001-01-01T00:00:00</CreatedAt>
+      <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+      <Name>namePatient2</Name>
+      <Surname>surnamePatient2</Surname>
+      <Email>patient2@gmail.com</Email>
+      <IllnessType>Ambulance</IllnessType>
+      <AdditionalInfo>need additional medicine test</AdditionalInfo>
+    </Patient>
+    <Doctor>
+      <Id>1</Id>
+      <CreatedAt>0001-01-01T00:00:00</CreatedAt>
+      <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+      <Name>nameDoc1</Name>
+      <Surname>surnameDoc1</Surname>
+      <Email>doc1@gmail.com</Email>
+      <DoctorType>Dentist</DoctorType>
+      <Experience>10</Experience>
+      <Salary>0</Salary>
+    </Doctor>
+    <DateTimeFrom>0001-01-01T00:00:00</DateTimeFrom>
+    <DateTimeTo>0001-01-01T00:00:00</DateTimeTo>
+    <Description>test 3</Description>
+  </Appointment>
 </ArrayOfAppointment>
